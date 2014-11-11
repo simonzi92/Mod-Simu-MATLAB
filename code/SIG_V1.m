@@ -1,3 +1,12 @@
+% SKRIPTMASTER: Sequential Investment Game for two Players
+%
+% This script contains the code of the Sequential Investment Game for two
+% players, which is part of the GESS course "Modeling and Simulating Social
+% Systems with MATLAB".
+%
+% Authors: Fabian Keller, Sebastian Klotz, Simon Zimmermann
+% Date: 11.11.2014
+
 % Variables
 global N                
 global n
@@ -90,20 +99,42 @@ else
 end
 end
 
+% Sum of wins
+
+global sum_1
+global sum_2
+
 sum_1 = sum(win_1);
 sum_2 = sum(win_2);
 
-%Plots of scores
-figure(1);
-plot(1:N,score_1(:,11))
-hold on
-plot(1:N,score_2(:,11),'red')
+if sum_1 > sum_2
+    disp('Player 1 wins the game!')
+elseif sum_1 < sum_2
+    disp('Player 2 wins the game!')
+else disp('Draw!')
+end
 
-%Plots of bets
-figure(2);
-plot(1:N+1,bet_1(:,1))
+%Plot of scores
+figure(1);
+plot(1:N,score_1(:,11),'b-x')
 hold on
-plot(1:N+1,bet_2(:,1),'red')
+plot(1:N,score_2(:,11),'r-x')
+xlim([1 N]);
+title('Plot of scores');
+xlabel('Number of game');
+ylabel('Scores');
+legend('Player 1','Player 2');
+
+%Plot of bets
+figure(2);
+plot(1:N+1,bet_1(:,1),'b-x')
+hold on
+plot(1:N+1,bet_2(:,1),'r-x')
+xlim([1 N+1]);
+title('Plot of bets');
+xlabel('Number of game');
+ylabel('bets');
+legend('Player 1','Player 2');
 
 %Results:
 
@@ -114,6 +145,8 @@ plot(1:N+1,bet_2(:,1),'red')
 %history_1
 %history_2
 %win_1
-%win_2        
+%win_2
+%sum_1
+%sum_2
         
         
