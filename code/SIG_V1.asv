@@ -70,11 +70,7 @@ for i = 1:1:N
     
 % Determine win or lose
     
-    if score_1(i,11) >= score_2(i,11)
-        win_1(i) = 1;
-    elseif score_2(i,11) >= score_1(i,11)
-        win_2(i) = 1;
-    end
+    if history_1
             
 % Fictitious Play -> adapt strategy
     if i < N
@@ -89,8 +85,8 @@ end
 global sum_1
 global sum_2
 
-sum_1 = sum(win_1)
-sum_2 = sum(win_2)
+sum_1 = sum(win_1);
+sum_2 = sum(win_2);
 
 if sum_1 > sum_2
     disp('Player 1 wins the game!')
@@ -110,16 +106,16 @@ xlabel('Number of game');
 ylabel('Scores');
 legend('Player 1','Player 2');
 
-%Plot of bets
-figure(2);
-plot(1:N,bet_1(:,1),'b-x')
-hold on
-plot(1:N,bet_2(:,1),'r-x')
-xlim([1 N+1]);
-title('Plot of bets');
-xlabel('Number of game');
-ylabel('bets');
-legend('Player 1','Player 2');
+% %Plot of bets
+% figure(2);
+% plot(1:N+1,bet_1(:,1),'b-x')
+% hold on
+% plot(1:N+1,bet_2(:,1),'r-x')
+% xlim([1 N+1]);
+% title('Plot of bets');
+% xlabel('Number of game');
+% ylabel('bets');
+% legend('Player 1','Player 2');
 
 %Results:
 
