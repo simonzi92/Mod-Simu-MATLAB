@@ -112,14 +112,16 @@ legend('Player 1','Player 2');
 
 %Plot of bets
 figure(2);
-plot(1:N,bet_1(:,1),'b-x')
+plot(1:N,bet_1(:,1),'.b')
 hold on
-plot(1:N,bet_2(:,1),'r-x')
+plot(1:N,bet_2(:,1),'.r')
 xlim([1 N+1]);
 title('Plot of bets');
 xlabel('Number of game');
 ylabel('bets');
 legend('Player 1','Player 2');
+
+
 
 %Results:
 

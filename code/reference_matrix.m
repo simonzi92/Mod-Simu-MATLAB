@@ -2,7 +2,7 @@
 
 function [REF] = reference_matrix(n, p)
     
-    n_table = 100; % Number of reference plays
+    n_table = 10000; % Number of reference plays
     REF = zeros(101,101); % Reference Matrix
 
     for i = 1:1:101
@@ -44,5 +44,8 @@ function [REF] = reference_matrix(n, p)
 
         end
     end
+    
+    figure
+    imagesc(REF)
     
 end
