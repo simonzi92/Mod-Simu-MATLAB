@@ -5,20 +5,20 @@ clc
 
 % Variable definition
 
-c = 100;       % repeats per chapter
-C = 100000;       % number of chapters
-n = 10;         % number of games per repeat
+c = 100;                    % repeats per chapter
+C = 100000;                 % number of chapters
+n = 10;                     % number of games per repeat
 
-m_start = 100;  % starting money
-p = 60;         % probability of winning in %
+m_start = 100;              % starting money
+p = 60;                     % probability of winning in %
 
-s_pool = 10:2.5:30;    % pool of bets
+s_pool = 10:2.5:30;         % pool of bets
 
-strategy_1 = zeros(1,n);   % strategies: 10x bet
+strategy_1 = zeros(1,n);    % strategies: 10x bet
 strategy_2 = zeros(1,n);
-win_1 = zeros(1,2);   % wins | uses - per strategy
+win_1 = zeros(1,2);         % wins | uses - per strategy
 win_2 = zeros(1,2);
-money_1 = zeros(1);   % money
+money_1 = zeros(1);         % money
 money_2 = zeros(1);
 
 % start strategy
@@ -58,7 +58,6 @@ for i = 1:1:C
         end
         
         % Who has won?
-        
         if money_1(end) > money_2(end)
             win_1(end,1) = win_1(end,1) + 1;
         elseif money_1(end) < money_2(end)
@@ -130,12 +129,5 @@ figure;
 imagesc(strategy_1(sort_ind_1(1:10),:))
 figure;
 imagesc(strategy_2(sort_ind_2(1:10),:))
-
-% disp('Isch binn feddisch, babbi.')
-% disp('Ok, jud jemacht mein Sohn!')
-% disp('Duuuuu, babbi?')
-% disp('Jop, mein Sohn?')
-% disp('Kaufst du mir ne Powerade?')
-% disp('N???, isch hab nur fufzig sent dabai!')
 
 % END OF SIG
