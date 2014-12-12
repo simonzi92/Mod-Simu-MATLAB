@@ -1,17 +1,18 @@
 % SKRIPTMASTER: Sequential Investment Game for two Players
 %
 % This script contains the code of the Sequential Investment Game for two
-% players, which is part of the GESS course "Modeling and Simulating Social
+% players, which is part of the GESS course "Modelling and Simulating Social
 % Systems with MATLAB".
 %
 % Authors: Fabian Keller, Sebastian Klotz, Simon Zimmermann
 % Date: 11.11.2014
+% Version 1
 
-% Variables
-global N                
-global n
-global p
-global m_start
+clear all
+close all
+clc
+
+% Variable definition
 
 N = 1000;       % number of repeats
 n = 10;         % number of games per repeat
@@ -19,17 +20,9 @@ p = 60;         % winning probability (in %, 0 - 100)
 m_start = 100;  % start amount of money
 
 % Players
-global bet_1            
-global bet_2 
-global score_1  
-global score_2   
-global history_1     
-global history_2   
-global win_1 
-global win_2
 
 bet_1 = zeros(N,1);         % bet player 1 (in %)
-bet_1(1,1) = 5;            % starting bet player 1 (in %)
+bet_1(1,1) = 5;             % starting bet player 1 (in %)
 bet_2 = zeros(N,1);         % bet player 2 (in %)
 bet_2(1,1) = 25;            % starting bet player 2 (in %)
 score_1 = zeros(N,n+1);     % scores of player 1 in one repeat
@@ -40,6 +33,7 @@ win_1 = zeros(N,1);         % win (=1) / lose (=0) history of player 1 in one re
 win_2 = zeros(N,1);         % win (=1) / lose (=0) history of player 2 in one repeat
 
 %REF = reference_matrix(10,60);
+
 load('ref.mat');
 
 % Game
@@ -78,16 +72,12 @@ for i = 1:1:N
             
 % Fictitious Play -> adapt strategy
     if i < N
-        %[bet_1,bet_2] = fictitious_play(REF,bet_1,bet_2,i);
-        [bet_1(i+1,1),bet_2(i+1,1)] = fictitious_play_range(REF,bet_1(i,1),bet_2(i,1));
+        [bet_1(i+1,1),bet_2(i+1,1)] = fictitious_play(REF,bet_1(i,1),bet_2(i,1));
     end
 
 end
 
 % Sum of wins
-
-global sum_1
-global sum_2
 
 sum_1 = sum(win_1)
 sum_2 = sum(win_2)
@@ -121,19 +111,5 @@ xlabel('Number of game');
 ylabel('bets');
 legend('Player 1','Player 2');
 
-
-
-%Results:
-
-%bet_1
-%bet_2
-%score_1
-%score_2
-%history_1
-%history_2
-%win_1
-%win_2
-%sum_1
-%sum_2
-        
+% END OF SIG_V1
         

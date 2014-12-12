@@ -1,4 +1,4 @@
-% This function generates the Reference Table for both Players
+% This function generates the reference table for both players for SIG_V1
 
 function [REF] = reference_matrix(n, p)
     

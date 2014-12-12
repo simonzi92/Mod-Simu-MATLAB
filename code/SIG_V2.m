@@ -1,13 +1,22 @@
-% Random investment game
+% SKRIPTMASTER: Sequential Investment Game for two Players
+%
+% This script contains the code of the Sequential Investment Game for two
+% players, which is part of the GESS course "Modelling and Simulating Social
+% Systems with MATLAB".
+%
+% Authors: Fabian Keller, Sebastian Klotz, Simon Zimmermann
+% Date: 25.11.2014
+% Version 2
 
 clear all
+close all
 clc
 
 % Variable definition
 
-c = 100;                    % repeats per chapter
-C = 100000;                 % number of chapters
-n = 10;                     % number of games per repeat
+c = 100;                    % number of repeats
+C = 100;                    % number of games
+n = 10;                     % number of turns
 
 m_start = 100;              % starting money
 p = 60;                     % probability of winning in %
@@ -32,13 +41,13 @@ end
 % SIG
 for i = 1:1:C
     
-    % chapter
+    % round
     for j = 1:1:c
                 
         money_1(end) = m_start;
         money_2(end) = m_start;
                 
-        % game
+        % turn
         for k = 1:1:n
                        
            % player 1
@@ -93,10 +102,6 @@ for i = 1:1:C
     win_1(end,2) = win_1(end,2) + 1;
     win_2(end,2) = win_2(end,2) + 1;
     
-    % display progress
-    clc
-    progress = round(i/C,4)*100
-    
 end
 
 disp('Finished.')
@@ -125,9 +130,20 @@ disp('end')
 % order arrays and imagesc strategies
 [sort_val_1,sort_ind_1] = sort(win_1(:,2), 'descend');
 [sort_val_2,sort_ind_2] = sort(win_2(:,2), 'descend');
-figure;
-imagesc(strategy_1(sort_ind_1(1:10),:))
-figure;
-imagesc(strategy_2(sort_ind_2(1:10),:))
 
-% END OF SIG
+% Plot of strategies
+figure(1)
+subplot(1,2,1)
+imagesc(strategy_1(sort_ind_1(1:10),:))
+title('Plot of top strategies of player 1');
+xlabel('Number of bets');
+ylabel('Strategies');
+colorbar
+subplot(1,2,2)
+imagesc(strategy_2(sort_ind_2(1:10),:))
+title('Plot of top strategies of player 2');
+xlabel('Number of bets');
+ylabel('Strategies');
+colorbar
+
+% END OF SIG_V2
