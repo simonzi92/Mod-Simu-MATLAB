@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Abstract}{6}
+\contentsline {section}{\numberline {2}Individual contributions}{6}
+\contentsline {section}{\numberline {3}Introduction and Motivations}{6}
+\contentsline {section}{\numberline {4}Theoretical Background}{7}
+\contentsline {subsection}{\numberline {4.1}Game Theory}{7}
+\contentsline {subsection}{\numberline {4.2}Kelly criterion}{7}
+\contentsline {subsection}{\numberline {4.3}Sequential Investment Game}{8}
+\contentsline {subsection}{\numberline {4.4}Ficticious Play}{8}
+\contentsline {section}{\numberline {5}Research question}{9}
+\contentsline {section}{\numberline {6}Implementation}{9}
+\contentsline {subsection}{\numberline {6.1}Version 1: Reference Matrix}{9}
+\contentsline {subsubsection}{\numberline {6.1.1}Assumptions \& Implementation}{9}
+\contentsline {subsubsection}{\numberline {6.1.2}Results \& Discussion}{10}
+\contentsline {subsection}{\numberline {6.2}Version 2: Random strategies}{11}
+\contentsline {subsubsection}{\numberline {6.2.1}Assumptions \& Implementation}{11}
+\contentsline {subsubsection}{\numberline {6.2.2}Results \& Discussion}{12}
+\contentsline {subsection}{\numberline {6.3}Version 3: Head \& Tail changes}{13}
+\contentsline {subsubsection}{\numberline {6.3.1}Assumptions \& Implementation}{13}
+\contentsline {subsubsection}{\numberline {6.3.2}Results \& Discussion}{14}
+\contentsline {subsection}{\numberline {6.4}Version 4: Kelly VS all strategies}{14}
+\contentsline {subsubsection}{\numberline {6.4.1}Assumptions \& Implementation}{15}
+\contentsline {subsubsection}{\numberline {6.4.2}Results \& Discussions}{15}
+\contentsline {section}{\numberline {7}Summary and Outlook}{16}
+\contentsline {section}{Appendices}{18}
+\contentsline {section}{\numberline {A}Matlab code}{18}
+\contentsline {subsection}{\numberline {A.1}Version 1}{18}
+\contentsline {subsubsection}{\numberline {A.1.1}SIG\_V1}{18}
+\contentsline {subsubsection}{\numberline {A.1.2}Ficticous Play}{20}
+\contentsline {subsubsection}{\numberline {A.1.3}Reference Matrix}{21}
+\contentsline {subsection}{\numberline {A.2}Version 2}{23}
+\contentsline {subsection}{\numberline {A.3}Version 3}{26}
+\contentsline {subsection}{\numberline {A.4}Version 4}{32}
